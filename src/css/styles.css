@@ -3,17 +3,23 @@
 body {
     font-family: Poppins;
     background-color: #E7E5E4;
+    width: 100%;
+    display: flex;
 }
 
-  .main-principal {
+.main-principal {
     background-color: #FFFFFF;
     display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: center; 
-    /* margin-left: 100px; */
-}   
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+}
 
+.section-principal{
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 100px;
+}
 
 .h1 {
     font-size: 32px;
@@ -29,27 +35,102 @@ body {
 
 .border-dashed {
     border-style: dashed !important;
- 
 }
+
 .file-upload-area {
     cursor: pointer;
 }
-.image-ilustracao{
-    background-color: blue;
-    margin-left: 50px;
 
+.image-ilustracao {
+    background-color:#2135a6;
+    display: flex;
+    justify-content: center;
+    width: 900px;
+    flex-direction: column;  
+    align-items: center;  
 }
 
-/* style para seção trilhas */
+.ilustracao{
+    width: 400px;
+    height: 400px;
+}
 
-/* .trilhas{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: left;
-    justify-content: left;
-
-} */
-
+.logo-trilhas{
+    width: 200px;
+    
+}
 
 
+
+/* style de seção das trilhas de conhecimento */
+input[type="radio"]:checked {
+    background-color: #ff6600;
+    border-color: #ff6600;
+    box-shadow: orange;
+}
+.icons:has(input[type="radio"]:checked) {
+    border-color: #ff6600 !important;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.5); /* Efeito de destaque opcional */
+}
+input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    width: 8px; 
+    height: 8px; 
+    background-color: #ff6600; 
+    border-radius: 50%; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+input[type="radio"]:checked::after {
+    content: "✔"; 
+    display: block;
+    font-size: 15px; 
+    color: white; 
+    text-align: center;
+    line-height: 16px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+/* Estilo para o botão com borda laranja */
+.btn-outline-orange {
+    border: 2px solid #e43a12;
+    color: #e43a12;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-outline-orange:hover {
+    background-color: #e43a12;
+    color: white;
+}
+
+/* Estilo para o botão com fundo laranja */
+.btn-orange {
+    background-color: #e43a12;
+    color: white;
+    border: 2px solid #e43a12;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-orange:hover {
+    background-color: #e43a12;
+    border-color: #e43a12;
+}
+
+@media (max-width: 450px) {
+    .image-ilustracao {
+        display: none;
+    }
+
+    .section-principal{
+        padding: 50px;
+    }
+}

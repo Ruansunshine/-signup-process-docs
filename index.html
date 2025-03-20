@@ -13,15 +13,18 @@
 </head>
 
 <body>
-    <main class="main-principal container">
-        <section class="section-principal  container">
+
+    <main class="main-principal coonteiner">
+        <section class="section-principal">
             <section class="titulo-inicio mb-5">
+
+                <div class="spacer"></div>
                 <div>
                     <img src="./src/assets/icons/arrow-left.svg" alt="">
-                    <a class="text-muted">   Voltar</a>
+                    <a class="text-muted"> Voltar</a>
                 </div>
-                <h1 class="h1 text-truncate">Formulário de inscrição</h1>
-                <p class="p1 text-truncate">Prencha os dados abaixo para fazer   sua inscrição no programa Trilhas
+                <h1 class="h1">Formulário de inscrição</h1>
+                <p class="p1 ">Prencha os dados abaixo para fazer sua inscrição no programa Trilhas
                 </p>
             </section>
             <!-- seção do participante -->
@@ -29,7 +32,8 @@
                 <h3 class="h3  mb-4">Informações do participante</h2>
                     <!-- campos de entradas com nome, data de nasciment, cpf , sexo, email, telefone, documento de indetidade -->
                     <div class="mb-3">
-                        <label for="entrada-1" class="form-label text-muted  mb-1" id="label-nome">Nome Completo</label>
+                        <label for="entrada-1" class="form-label text-muted  mb-1" id="label-nome">Nome
+                            Completo</label>
                         <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                             id="entrada-1" maxlength="10">
                     </div>
@@ -41,13 +45,14 @@
                     </div>
                     <div class="mb-3">
                         <label for="entrada-3" class="form-label text-muted  mb-1" id="label-cpf">Cpf</label>
-                        <input type="cpf" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
+                        <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                             id="entrada-3" maxlength="14" placeholder="000.000.000-00">
                     </div>
                     <div class="mb-3">
                         <label for="entrada-4" class="form-label text-muted mb-1" id="label-sexo">Sexo</label>
                         <div class="position-relative">
-                            <select name="sexo" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100" id="entrada-4">
+                            <select name="sexo" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
+                                id="entrada-4">
                                 <option value=""></option>
                                 <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
@@ -59,16 +64,14 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="entrada-5" class="form-label text-muted  mb-1"
-                            id="label-email">email</label>
-                        <input type="email" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
+                        <label for="entrada-5" class="form-label text-muted  mb-1" id="label-email">email</label>
+                        <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                             id="entrada-5" maxlength="10">
                     </div>
                     <div class="mb-3">
-                        <label for="entrada-6" class="form-label text-muted  mb-1"
-                            id="label-telefone">Telefone</label>
+                        <label for="entrada-6" class="form-label text-muted  mb-1" id="label-telefone">Telefone</label>
                         <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
-                            id="entrada-6" maxlength="11"  placeholder="(00) 00000-0000">
+                            id="entrada-6" maxlength="11">
                     </div>
                     <div>
                         <br>
@@ -78,17 +81,9 @@
                             <div class="d-flex flex-column align-items-center justify-content-center border border-2 rounded  p-4 w-100 border-dashed file-upload-area"
                                 onclick="selecionarArquivo()">
 
-                                <svg width="50" height="50" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M17.4776 9.01106C17.485 9.01102 17.4925 9.01101 17.5 9.01101C19.9853 9.01101 22 11.0294 22 13.5193C22 15.8398 20.25 17.7508 18 18M17.4776 9.01106C17.4924 8.84606 17.5 8.67896 17.5 8.51009C17.5 5.46695 15.0376 3 12 3C9.12324 3 6.76233 5.21267 6.52042 8.03192M17.4776 9.01106C17.3753 10.1476 16.9286 11.1846 16.2428 12.0165M6.52042 8.03192C3.98398 8.27373 2 10.4139 2 13.0183C2 15.4417 3.71776 17.4632 6 17.9273M6.52042 8.03192C6.67826 8.01687 6.83823 8.00917 7 8.00917C8.12582 8.00917 9.16474 8.38194 10.0005 9.01101"
-                                        stroke="#8F8881" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path
-                                        d="M12 13V21M12 13C11.2998 13 9.99153 14.9943 9.5 15.5M12 13C12.7002 13 14.0085 14.9943 14.5 15.5"
-                                        stroke="#8F8881" stroke-width="1.5" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
+                                <div>
+                                    <img src="./src/assets/icons/cloud-upload.svg" alt="">
+                                </div>
                                 <!-- Texto abaixo do ícone -->
                                 <span class="text-muted mt-2" id="file-name">Clique aqui para selecionar o
                                     arquivo</span>
@@ -99,15 +94,16 @@
                     </div>
             </section>
             <!-- seção do endereço -->
+
             <section class="endereco">
                 <h3 class="h3" id="titulo-endereco"></h3>
                 <!-- campos de entradas com cep, rua,  cidade , numero, estado, comprovante de residncia -->
                 <div class="mb-3">
                     <label for="entrada-7" class="form-label text-muted  mb-1" id="label-cep"></label>
                     <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
-                        id="entrada-7" maxlength="10">
+                        id="entrada-7" maxlength="8">
                 </div>
-                <div class="mb-3 row ">
+                <div class="mb-3 row">
                     <div class="col-8 d-flex">
                         <div class="flex-grow-1">
                             <label for="entrada-8" class="form-label text-muted  mb-1" id="label-rua"></label>
@@ -119,7 +115,7 @@
                         <div class="flex-grow-1">
                             <label for="entrada-9" class="form-label text-muted  mb-1" id="label-numero"></label>
                             <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-50"
-                                id="entrada-9" maxlength="50">
+                                id="entrada-9" maxlength="4">
                         </div>
                     </div>
                 </div>
@@ -135,7 +131,7 @@
                         <div class="flex-grow-1">
                             <label for="entrada-11" class="form-label text-muted  mb-1" id="label-estado"></label>
                             <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-50"
-                                id="entrada-11" maxlength="50">
+                                id="entrada-11" maxlength="2">
                         </div>
                     </div>
                 </div>
@@ -154,66 +150,117 @@
                 </div>
             </section>
             <!-- seção trilhas -->
-            <section class="trilhas ms-auto">
+            <section class="trilhas ms-auto ">
                 <!-- Programação front , back,jogos, ux, ciencia de dados -->
-                <h3 class="h3" id="title-trilhas"></h3>
+                <h3 class="h3 mb-4" id="title-trilhas"></h3>
                 <div class="mb-3">
                     <label for="class=" form label text-muted mb-1">Selecione apenas uma trilha</label>
                 </div>
-                <div class="mb-3 icons row me-3 gap-3 ms-auto">
-                    <div
-                        class="box col d-flex flex-column align-items-center justify-content-center border border-2 rounded p-3">
-                        <!-- icone front-end -->
-                        <img src="./src/assets/icons/front-end.svg" alt="">
-                        <span class="text-truncate" id="file-name">Programação Front-end</span>
-                    </div>
-                    <div
-                        class="box col d-flex d-flex flex-column align-items-center justify-content-center border border-2 rounded p-3">
-                        <!-- icone back-end -->
-                        <img src="./src/assets/icons/back-end.svg" alt="">
-                        <span class="text-truncate" id="file-name">Programação Back-end</span>
 
+                <div class="container">
+                    <div class="row g-3">
+                        <!-- Programação Front-end -->
+                        <div class="col-6">
+                            <div class="mb-3 icons d-flex flex-column align-items-center justify-content-center border border-2 rounded p-4 w-100 position-relative"
+                                id="front-end-box">
+                                <label class="position-absolute top-0 start-0 m-2">
+                                    <input type="radio" class="form-check-input" name="trilhas"
+                                        style="border-radius: 50%;">
+                                </label>
+                                <img src="./src/assets/icons/front-end.svg" alt="">
+                                <span class="" id="file-name">Programação Front-end</span>
+                            </div>
+                        </div>
+                        <!-- Programação Back-end -->
+                        <div class="col-6">
+                            <div class="mb-3 icons d-flex flex-column align-items-center justify-content-center border border-2 rounded p-4 w-100 position-relative"
+                                id="back-end-box">
+                                <label class="position-absolute top-0 start-0 m-2">
+                                    <input type="radio" class="form-check-input" name="trilhas"
+                                        style="border-radius: 50%;">
+                                </label>
+                                <img src="./src/assets/icons/front-end.svg" alt="">
+                                <span class="" id="file-name">Programação Back-end</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class=" mb-3 icons row me-3 gap-3 ms-auto">
-                    <div
-                        class="box col d-flex flex-column align-items-center justify-content-center border border-2 rounded p-3">
-                        <!-- icone front-end -->
-                        <img src="./src/assets/icons/front-end.svg" alt="">
-                        <span class="text-truncate" id="file-name">Programação de Jogos</span>
-                    </div>
-                    <div
-                        class="box col d-flex d-flex flex-column align-items-center justify-content-center border border-2 rounded p-3">
-                        <!-- icone back-end -->
-                        <img src="./src/assets/icons/back-end.svg" alt="">
-                        <span class="text-truncate" id="file-name">Design e Experiência </span>
-
+                <!-- programação jogos -->
+                <div class="container">
+                    <div class="row g-3">
+                        <!-- Programação Front-end -->
+                        <div class="col-6">
+                            <div class="mb-3 icons d-flex flex-column align-items-center justify-content-center border border-2 rounded p-4 w-100 position-relative"
+                                id="jogos-box">
+                                <label class="position-absolute top-0 start-0 m-2">
+                                    <input type="radio" class="form-check-input" name="trilhas"
+                                        style="border-radius: 50%;">
+                                </label>
+                                <img src="./src/assets/icons/icon-games.svg" alt="">
+                                <span class="" id="file-name">Programação Jogos</span>
+                            </div>
+                        </div>
+                        <!-- Programação Back-end -->
+                        <div class="col-6">
+                            <div class="mb-3 icons d-flex flex-column align-items-center justify-content-center border border-2 rounded p-4 w-100 position-relative"
+                                id="Design-experiencia-box">
+                                <label class="position-absolute top-0 start-0 m-2">
+                                    <input type="radio" class="form-check-input" name="trilhas"
+                                        style="border-radius: 50%;">
+                                </label>
+                                <img src="./src/assets/icons/icon-ux.svg" alt="">
+                                <span class="" id="file-name">Design e Experiência</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="icons row me-3 gap-3 ms-auto">
-                    <div
-                        class="box col d-flex flex-column align-items-center justify-content-center border border-2 rounded p-3">
-                        <!-- icone front-end -->
-                        <img src="./src/assets/icons/front-end.svg" alt="">
-                        <span class="text-truncate" id="file-name">Programação Front-end</span>
-                    </div>
 
+                <!-- Ciencia de dados -->
+                <div class="container mb-3">
+                    <div class="row g-3">
+                        <!-- Programação Front-end -->
+                        <div class="col-6">
+                            <div class="mb-3 icons d-flex flex-column align-items-center justify-content-center border border-2 rounded p-4 w-100 position-relative"
+                                id="ciencia-dados-box">
+                                <label class="position-absolute top-0 start-0 m-2">
+                                    <input type="radio" class="form-check-input" name="trilhas"
+                                        style="border-radius: 50%;">
+                                </label>
+                                <img src="./src/assets/icons/icon-data.svg" alt="">
+                                <span class="" id="file-name">Ciência de Dados</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </section>
             <!-- seção de segurança -->
-            <section class="seguranca">
-                <p>declaro que li e concordo com os <strong>Termos e Condições</strong> e com a <strong>Politica de
-                        privacidade</strong></p>
+            <section class="seguranca mb-5">
+                <div class="d-flex justify-content-center align-items-center mb-3" >
+                    <input type="checkbox" class="form-check-input mb-4" name="trilhas" style="border-radius: 5%; margin-right: 2vh;">
+                    <p class="mb-3" style="display: inline-block; margin: 0;">Declaro que li e concordo com os 
+                        <strong style="color: #e43a12;">Termos e Condições</strong> e com a 
+                        <strong style="color: #e43a12;">Política de Privacidade</strong>
+                    </p>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button id="cancelar" class="btn btn-outline-orange me-2">Cancelar</button>
+                    <button id="inscricao" class="btn btn-orange">Fazer inscrição</button>
+                </div>
+
                 <!-- botão de cancelar e fazer a inscrição -->
             </section>
         </section>
+
+        <!-- imagem fora do main -->
         <div class="image-ilustracao">
-            <img src="./src/assets/image/ilustracao.png" class="w-100 w-md-100">
+            <img src="./src/assets/image/ilustracao.png" class="ilustracao img-fluid" alt="Ilustração">
+            <img src="./src/assets/icons/group-trilhas.svg" class="logo-trilhas" alt="">
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="./app.js"></script>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js"></script>
 </body>
 
 </html>

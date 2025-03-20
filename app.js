@@ -8,40 +8,40 @@ let rua = document.getElementById("label-rua");
 rua.textContent = "Rua";
 let numero = document.getElementById("label-numero");
 numero.textContent = "Número";
-let cidade =  document.getElementById("label-cidade");
+let cidade = document.getElementById("label-cidade");
 cidade.textContent = "Cidade";
-let estado =  document.getElementById("label-estado");
-estado.textContent = "Estado";  
+let estado = document.getElementById("label-estado");
+estado.textContent = "Estado";
 
 //selecionar o arquivo
-function selecionarArquivo(){
+function selecionarArquivo() {
     console.log("função chamada")
     let arquivo = document.querySelector('.file-upload-area');
-        
-        if(arquivo){
-           arquivo.addEventListener('click', function(){
+
+    if (arquivo) {
+        arquivo.addEventListener('click', function () {
             console.log("Area de arquivo foi clicada");
             document.getElementById('file-input').click();
-           });
-        }else{
-            console.log("missão falhou: elemento file-upload-are não encotrado");
-        }
-  
+        });
+    } else {
+        console.log("missão falhou: elemento file-upload-are não encotrado");
+    }
+
 }
 selecionarArquivo();  //chamada da função
 
 //funçao que altera a cor dos campos de entradas
-function alterarCor(id){
+function alterarCor(id) {
     let entrada = document.getElementById(`entrada-${id}`);
-    entrada.addEventListener('focus', function(){
+    entrada.addEventListener('focus', function () {
         entrada.classList.remove('bg-secondary', 'bg-opacity-25');
         entrada.classList.add('bg-light')
     });
-    entrada.addEventListener('blur', function() {
+    entrada.addEventListener('blur', function () {
         if (!entrada.value) {
             entrada.classList.remove('bg-light');
             entrada.classList.add('bg-secondary', 'bg-opacity-25');
-        }else {
+        } else {
             console.error(`Elemento com id entrada-${id} não encontrado!`);
         }
     });
@@ -59,21 +59,23 @@ alterarCor(9);
 alterarCor(10);
 alterarCor(11);
 
-
 //lógica e DOM do section trilhas 
 let tituloTrilhas = document.getElementById("title-trilhas");
 tituloTrilhas.textContent = "Trilhas de Aprendizagem";
 
-
-function validador(){
+//logica para formatar numero de cpf e telefone 
+function formatador(){
     let telefoneInput = document.getElementById('entrada-6');
     let cpfInput = document.getElementById('entrada-3');
+
 
 cpfInput.addEventListener("input", function (e) {
     let value = e.target.value;
 
+
     // Remove caracteres não numéricos
     value = value.replace(/\D/g, "");
+
 
     // Formata o CPF corretamente
     if (value.length <= 3) {
@@ -86,22 +88,48 @@ cpfInput.addEventListener("input", function (e) {
         value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
     }
 
+
     // Atualiza o campo
     e.target.value = value;
 });
 
+telefoneInput.addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
 
-    telefoneInput.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
-        
-        if (value.length > 11) {
-            value = value.slice(0, 11); // Limita a 11 caracteres (padrão Brasil: DDD + 9 dígitos)
-        }
-        
+    if (value.length > 11) {
+        value = value.slice(0, 11); // Limita a 11 caracteres (padrão Brasil: DDD + 9 dígitos)
+    }
+
+    // Aplica a formatação (XX) XXXXX-XXXX se tiver 11 dígitos
+    if (value.length === 11) {
         value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
-        
-        e.target.value = value;
+    }
+
+    e.target.value = value;
+});
+
+}
+
+
+
+formatador();
+
+// Seleciona a caixa de "Programação Front-end"
+function trilhasCheck() {
+    let trilhas = document.querySelectorAll('input[name="trilhas"]');
+
+    trilhas.forEach(input => {
+        input.addEventListener('change', () => {
+            if (input.checked) {
+                let trilhaSelecionada = input.closest('.icons').querySelector('span').textContent.trim();
+                console.log(`Usuario clicou em : ${trilhaSelecionada}`);
+            }
+        });
     });
 }
 
-validador();
+trilhasCheck();
+
+
+
+  
