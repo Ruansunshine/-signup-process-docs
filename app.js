@@ -16,12 +16,15 @@ estado.textContent = "Estado";
 //selecionar o arquivo
 function selecionarArquivo() {
     console.log("função chamada")
-    let arquivo = document.querySelector('.file-upload-area');
+    let arquivo = document.querySelectorAll('.file-upload-area');
 
-    if (arquivo) {
-        arquivo.addEventListener('click', function () {
-            console.log("Area de arquivo foi clicada");
-            document.getElementById('file-input').click();
+    if (arquivo.length > 0) {
+        arquivo.forEach(arquivo => {
+            arquivo.addEventListener('click', function () {
+                console.log("Area de arquivo foi clicada");
+                document.getElementById('file-input').click();
+            });
+
         });
     } else {
         console.log("missão falhou: elemento file-upload-are não encotrado");
@@ -71,6 +74,7 @@ tituloTrilhas.textContent = "Trilhas de Aprendizagem";
 function trilhasCheck() {
     let trilhas = document.querySelectorAll('input[name="trilhas"]');
 
+
     trilhas.forEach(input => {
         input.addEventListener('change', () => {
             if (input.checked) {
@@ -84,49 +88,49 @@ function trilhasCheck() {
 trilhasCheck();
 
 //logica para formatar numero de cpf e telefone 
-function formatador(){
+function formatador() {
     let telefoneInput = document.getElementById('entrada-6');
     let cpfInput = document.getElementById('entrada-3');
 
 
-cpfInput.addEventListener("input", function (e) {
-    let value = e.target.value;
+    cpfInput.addEventListener("input", function (e) {
+        let value = e.target.value;
 
 
-    // Remove caracteres não numéricos
-    value = value.replace(/\D/g, "");
+        // Remove caracteres não numéricos
+        value = value.replace(/\D/g, "");
 
 
-    // Formata o CPF corretamente
-    if (value.length <= 3) {
-        value = value.replace(/(\d{3})(\d{0,3})/, "$1.$2");
-    } else if (value.length <= 6) {
-        value = value.replace(/(\d{3})(\d{3})(\d{0,3})/, "$1.$2.$3");
-    } else if (value.length <= 9) {
-        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
-    } else if (value.length === 11) {
-        value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-    }
+        // Formata o CPF corretamente
+        if (value.length <= 3) {
+            value = value.replace(/(\d{3})(\d{0,3})/, "$1.$2");
+        } else if (value.length <= 6) {
+            value = value.replace(/(\d{3})(\d{3})(\d{0,3})/, "$1.$2.$3");
+        } else if (value.length <= 9) {
+            value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/, "$1.$2.$3-$4");
+        } else if (value.length === 11) {
+            value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+        }
 
 
-    // Atualiza o campo
-    e.target.value = value;
-});
+        // Atualiza o campo
+        e.target.value = value;
+    });
 
-telefoneInput.addEventListener('input', function (e) {
-    let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
+    telefoneInput.addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
 
-    if (value.length > 11) {
-        value = value.slice(0, 11); // Limita a 11 caracteres (padrão Brasil: DDD + 9 dígitos)
-    }
+        if (value.length > 11) {
+            value = value.slice(0, 11); // Limita a 11 caracteres (padrão Brasil: DDD + 9 dígitos)
+        }
 
-    // Aplica a formatação (XX) XXXXX-XXXX se tiver 11 dígitos
-    if (value.length === 11) {
-        value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
-    }
+        // Aplica a formatação (XX) XXXXX-XXXX se tiver 11 dígitos
+        if (value.length === 11) {
+            value = value.replace(/(\d{2})(\d{5})(\d{4})/, "($1) $2-$3");
+        }
 
-    e.target.value = value;
-});
+        e.target.value = value;
+    });
 
 }
 
@@ -134,4 +138,31 @@ telefoneInput.addEventListener('input', function (e) {
 
 formatador();
 
-  
+function segurancaClick() {
+    let security = document.getElementById("seguranca");
+
+    security.addEventListener('change', () => {
+        if (security.checked) {
+            console.log("Usuario aceitou os termos");
+        }
+    });
+
+}
+segurancaClick()
+
+function processarInscricao() {
+    let inscricao = document.getElementById("inscricao")
+    let cancelar = document.getElementById("cancelar")
+    inscricao.addEventListener('click', () => {
+
+        console.log("fazer inscrição  concluida");
+        window.location.href = './teste.html'
+    });
+    cancelar.addEventListener('click', () => {
+
+        console.log("inscriçao cancelada com sucesso");
+        window.location.href = './index.html'
+    });z
+
+}
+processarInscricao();
