@@ -43,9 +43,9 @@ function alterarCor(id) {
         if (!entrada.value) {
             entrada.classList.remove('bg-light');
             entrada.classList.add('bg-secondary', 'bg-opacity-25');
-        } else {
-            console.error(`Elemento com id entrada-${id} não encontrado!`);
-        }
+        }// } else {
+        //     console.error(`Elemento com id entrada-${id} não encontrado!`);
+        // }
     });
 }
 //chamadas com parametros
@@ -61,11 +61,74 @@ alterarCor(9);
 alterarCor(10);
 alterarCor(11);
 
+function formatadorCep() {
+    let format = document.getElementById("entrada-7");
+    format.addEventListener('input', function (e) {
+        let valor = e.target.value.replace(/\D/g, "");
+        if (valor.length > 5) {
+            valor = valor.slice(0, 5) + "-" + valor.slice(5, 8);
+        }
 
+        e.target.value = valor;
+    });
+}
+function formatCasa() {
+    let casaFormat = document.getElementById("entrada-9");
+    let errorMessage = document.getElementById("error-message");
+    casaFormat.addEventListener('input', function (e) {
+        let valorOriginal = e.target.value;
+        let valor = valorOriginal.replace(/\D/g, "");
+        if (valorOriginal !== valor) {
+            errorMessage.style.display = "inline"
+        } else {
+            errorMessage.style.display = "none";
+        }
+        e.target.value = valor;
 
+    });
+}
+function carregarEstados() {
+    const estados = [
+        { sigla: "AC", nome: "Acre" },
+        { sigla: "AL", nome: "Alagoas" },
+        { sigla: "AP", nome: "Amapá" },
+        { sigla: "AM", nome: "Amazonas" },
+        { sigla: "BA", nome: "Bahia" },
+        { sigla: "CE", nome: "Ceará" },
+        { sigla: "DF", nome: "Distrito Federal" },
+        { sigla: "ES", nome: "Espírito Santo" },
+        { sigla: "GO", nome: "Goiás" },
+        { sigla: "MA", nome: "Maranhão" },
+        { sigla: "MT", nome: "Mato Grosso" },
+        { sigla: "MS", nome: "Mato Grosso do Sul" },
+        { sigla: "MG", nome: "Minas Gerais" },
+        { sigla: "PA", nome: "Pará" },
+        { sigla: "PB", nome: "Paraíba" },
+        { sigla: "PR", nome: "Paraná" },
+        { sigla: "PE", nome: "Pernambuco" },
+        { sigla: "PI", nome: "Piauí" },
+        { sigla: "RJ", nome: "Rio de Janeiro" },
+        { sigla: "RN", nome: "Rio Grande do Norte" },
+        { sigla: "RS", nome: "Rio Grande do Sul" },
+        { sigla: "RO", nome: "Rondônia" },
+        { sigla: "RR", nome: "Roraima" },
+        { sigla: "SC", nome: "Santa Catarina" },
+        { sigla: "SP", nome: "São Paulo" },
+        { sigla: "SE", nome: "Sergipe" },
+        { sigla: "TO", nome: "Tocantins" }
+    ];
+    const selectEstado = document.getElementById("entrada-11");
 
-
-
+    estados.forEach(estado => {
+        let option = document.createElement("option");
+        option.value = estado.sigla;
+        option.textContent = `${estado.nome} (${estado.sigla})`;
+        selectEstado.appendChild(option);
+    });
+}
+formatadorCep();
+formatCasa();
+carregarEstados();
 //lógica e DOM do section trilhas 
 let tituloTrilhas = document.getElementById("title-trilhas");
 tituloTrilhas.textContent = "Trilhas de Aprendizagem";
@@ -80,7 +143,7 @@ function trilhasCheck() {
             if (input.checked) {
                 let trilhaSelecionada = input.closest('.icons').querySelector('span').textContent.trim();
                 console.log(`Usuario clicou em : ${trilhaSelecionada}`);
-            }
+            }    
         });
     });
 }
@@ -134,35 +197,44 @@ function formatador() {
 
 }
 
-
-
 formatador();
 
-function segurancaClick() {
-    let security = document.getElementById("seguranca");
 
-    security.addEventListener('change', () => {
-        if (security.checked) {
-            console.log("Usuario aceitou os termos");
+let security = document.getElementById("seguranca");
+let inscricao = document.getElementById("inscricao")
+let cancelar = document.getElementById("cancelar");
+let message = document.getElementById("aceite-termos");
+
+function segurancaClick() {
+        security.addEventListener('change', () => {
+        if (security.checked ) {
+            console.log("Usuario aceitou os termos");   
+            message.style.display = "none";
+        }else{
+            console.log("Usuario não aceitou os termos");
         }
     });
 
 }
-segurancaClick()
+
 
 function processarInscricao() {
-    let inscricao = document.getElementById("inscricao")
-    let cancelar = document.getElementById("cancelar")
-    inscricao.addEventListener('click', () => {
 
-        console.log("fazer inscrição  concluida");
-        window.location.href = './teste.html'
+    inscricao.addEventListener('click', () => {
+        if(security.checked){
+            console.log("fazer inscrição  concluida");
+            window.location.href = './teste.html'
+        }else {
+            console.log("Usuario ainda nao aceitou os termos")
+            message.style.display = "inline";
+        }    
     });
     cancelar.addEventListener('click', () => {
 
         console.log("inscriçao cancelada com sucesso");
         window.location.href = './index.html'
-    });z
+    });
 
 }
 processarInscricao();
+segurancaClick()

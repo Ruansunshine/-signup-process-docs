@@ -102,21 +102,23 @@
                 <div class="mb-3">
                     <label for="entrada-7" class="form-label text-muted  mb-1" id="label-cep"></label>
                     <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
-                        id="entrada-7" maxlength="8">
+                        id="entrada-7" maxlength="9">
                 </div>
                 <div class="mb-3 row">
                     <div class="col-8 d-flex">
                         <div class="flex-grow-1">
                             <label for="entrada-8" class="form-label text-muted  mb-1" id="label-rua"></label>
-                            <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-75"
-                                id="entrada-8" maxlength="50">
+                            <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-100"
+                                id="entrada-8" maxlength="70">
                         </div>
                     </div>
                     <div class="col-3 d-flex">
                         <div class="flex-grow-1">
                             <label for="entrada-9" class="form-label text-muted  mb-1" id="label-numero"></label>
-                            <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-50"
+                            <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-100"
                                 id="entrada-9" maxlength="4">
+                                <span id="error-message" class="text-danger" style="display: none; font-size: 0.9rem;">Apenas números são permitidos!</span>
+
                         </div>
                     </div>
                 </div>
@@ -124,15 +126,16 @@
                     <div class="col-8 d-flex">
                         <div class="flex-grow-1">
                             <label for="entrada-10" class="form-label text-muted  mb-1" id="label-cidade"></label>
-                            <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-75"
+                            <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-100"
                                 id="entrada-10" maxlength="50">
                         </div>
                     </div>
                     <div class="col-3 d-flex">
                         <div class="flex-grow-1">
                             <label for="entrada-11" class="form-label text-muted  mb-1" id="label-estado"></label>
-                            <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-50"
-                                id="entrada-11" maxlength="2">
+                            <select class="form-control bg-secondary bg-opacity-25 form-control-lg w-100" id="entrada-11">
+                                <option value="" disabled selected></option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -244,9 +247,14 @@
                         <strong style="color: #e43a12;">Política de Privacidade</strong>
                     </p>
                 </div>
-                <div class="d-flex justify-content-end">
-                    <button id="cancelar" class="btn btn-outline-orange me-2">Cancelar</button>
-                    <button id="inscricao" class="btn btn-orange">Fazer inscrição</button>
+                <div class="d-flex flex-column align-items-end">
+                    <div>
+                        <button id="cancelar" class="btn btn-outline-orange me-2">Cancelar</button>
+                        <button id="inscricao" class="btn btn-orange">Fazer inscrição</button>
+                    </div>
+                    <span id="aceite-termos" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                        Aceite os termos para finalizar o cadastro
+                    </span>
                 </div>
 
                 <!-- botão de cancelar e fazer a inscrição -->
