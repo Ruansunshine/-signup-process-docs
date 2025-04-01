@@ -36,17 +36,26 @@
                             Completo</label>
                         <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                             id="entrada-1" maxlength="100">
+                            <span id="error-message-1" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                                <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                            </span>
                     </div>
                     <div class="mb-3">
                         <label for="entrada-2" class="form-label text-muted  mb-1" id="label-data">Data de
                             Nascimento</label>
                         <input type="date" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                             id="entrada-2" maxlength="10">
+                            <span id="error-message-2" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                                <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                            </span>
                     </div>
                     <div class="mb-3">
                         <label for="entrada-3" class="form-label text-muted  mb-1" id="label-cpf">Cpf</label>
                         <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                             id="entrada-3" maxlength="14">
+                            <span id="error-message-3" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                                <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                            </span>
                     </div>
                     <div class="mb-3">
                         <label for="entrada-4" class="form-label text-muted mb-1" id="label-sexo">Sexo</label>
@@ -61,18 +70,27 @@
                             <span class="position-absolute end-0 top-50 translate-middle-y px-3">
                                 <img src="./src/assets/icons/arrow-down.svg" alt="Seta" class="icon-seta">
                             </span>
+                            <span id="error-message-4" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                                <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                            </span>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="entrada-5" class="form-label text-muted  mb-1" id="label-email">email</label>
                         <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                             id="entrada-5" maxlength="100">
+                        <span id="error-message-email" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                            <img src="./src/assets/icons/alert-icons.svg" alt=""> informe um e-mail válido
+                        </span>
                     </div>
                     <div class="mb-3">
                         <label for="entrada-6" class="form-label text-muted  mb-1" id="label-telefone">Telefone</label>
                         <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                             id="entrada-6" maxlength="11">
-                           
+                            <span id="error-message-6" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                                <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                            </span>
+
                     </div>
                     <div>
                         <br>
@@ -103,6 +121,9 @@
                     <label for="entrada-7" class="form-label text-muted  mb-1" id="label-cep"></label>
                     <input type="text" class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
                         id="entrada-7" maxlength="9">
+                        <span id="error-message-7" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                            <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                        </span>
                 </div>
                 <div class="mb-3 row">
                     <div class="col-8 d-flex">
@@ -110,6 +131,9 @@
                             <label for="entrada-8" class="form-label text-muted  mb-1" id="label-rua"></label>
                             <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-100"
                                 id="entrada-8" maxlength="70">
+                                <span id="error-message-8" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                                    <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                                </span>
                         </div>
                     </div>
                     <div class="col-3 d-flex">
@@ -117,9 +141,12 @@
                             <label for="entrada-9" class="form-label text-muted  mb-1" id="label-numero"></label>
                             <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-100"
                                 id="entrada-9" maxlength="4">
-                                <span id="error-message" class="text-danger" style="display: none; font-size: 0.9rem;">Apenas números são permitidos!</span>
-
+                            <span id="error-message" class="text-danger"
+                                style="display: none; font-size: 0.9rem;">Apenas números são permitidos!</span>
                         </div>
+                        <span id="error-message-9" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                            <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                        </span>
                     </div>
                 </div>
                 <div class="mb-3 row ">
@@ -128,14 +155,21 @@
                             <label for="entrada-10" class="form-label text-muted  mb-1" id="label-cidade"></label>
                             <input type="text" class="form-control  bg-secondary bg-opacity-25 form-control-lg w-100"
                                 id="entrada-10" maxlength="50">
+                                <span id="error-message-10" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                                    <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                                </span>
                         </div>
                     </div>
                     <div class="col-3 d-flex">
                         <div class="flex-grow-1">
                             <label for="entrada-11" class="form-label text-muted  mb-1" id="label-estado"></label>
-                            <select class="form-control bg-secondary bg-opacity-25 form-control-lg w-100" id="entrada-11">
+                            <select class="form-control bg-secondary bg-opacity-25 form-control-lg w-100"
+                                id="entrada-11">
                                 <option value="" disabled selected></option>
                             </select>
+                            <span id="error-message-11" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
+                                <img src="./src/assets/icons/alert-icons.svg" alt=""> Preecha os campos
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -240,20 +274,21 @@
             </section>
             <!-- seção de segurança -->
             <section class="seguranca mb-5">
-                <div class="d-flex justify-content-center align-items-center mb-3" >
-                    <input type="checkbox" class="form-check-input mb-4" name="seguranca" id="seguranca" style="border-radius: 5%; margin-right: 2vh;">
-                    <p class="mb-3" style="display: inline-block; margin: 0;">Declaro que li e concordo com os 
-                        <strong style="color: #e43a12;">Termos e Condições</strong> e com a 
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <input type="checkbox" class="form-check-input mb-4" name="seguranca" id="seguranca"
+                        style="border-radius: 5%; margin-right: 2vh;">
+                    <p class="mb-3" style="display: inline-block; margin: 0;">Declaro que li e concordo com os
+                        <strong style="color: #e43a12;">Termos e Condições</strong> e com a
                         <strong style="color: #e43a12;">Política de Privacidade</strong>
                     </p>
                 </div>
                 <div class="d-flex flex-column align-items-end">
                     <div>
                         <button id="cancelar" class="btn btn-outline-orange me-2">Cancelar</button>
-                        <button id="inscricao" class="btn btn-orange">Fazer inscrição</button>
+                        <button id="inscricao" class="btn btn-orange" disabled>Fazer inscrição</button>
                     </div>
                     <span id="aceite-termos" class="text-danger mt-2" style="display: none; font-size: 0.9rem;">
-                        Aceite os termos para finalizar o cadastro
+                        <img src="./src/assets/icons/alert-icons.svg" alt=""> Aceite os termos para finalizar o cadastro
                     </span>
                 </div>
 

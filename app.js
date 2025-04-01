@@ -61,6 +61,31 @@ alterarCor(9);
 alterarCor(10);
 alterarCor(11);
 
+function format(id){ //essa função irá verificar se o campo está vazio, caso sim aparecer uma mensagem de preechimento do campo
+    let entrada= document.getElementById(`entrada-${id}`);
+    let erroMessage = document.getElementById(`error-message-${id}`);
+    let verificarBtn =  document.getElementById("inscricao");
+    entrada.addEventListener('input', function (e) {
+        let valor = e.target.value;
+        if(valor === ""){
+            erroMessage.style.display = "inline";
+            verificarBtn.disabled = true;
+        }else {
+            erroMessage.style.display = "none";
+            verificarBtn.disabled = false;
+        }
+    });
+}
+format(1);
+format(2);
+format(3);
+format(4);
+format(6);
+format(7);
+format(8);
+format(9);
+format(10);
+format(11 );
 function formatadorCep() {
     let format = document.getElementById("entrada-7");
     format.addEventListener('input', function (e) {
@@ -73,11 +98,11 @@ function formatadorCep() {
     });
 }
 function formatCasa() {
-    let casaFormat = document.getElementById("entrada-9");
+    let casaFormat = document.getElementById("entrada-9"); 
     let errorMessage = document.getElementById("error-message");
     casaFormat.addEventListener('input', function (e) {
-        let valorOriginal = e.target.value;
-        let valor = valorOriginal.replace(/\D/g, "");
+        let valorOriginal = e.target.value; //valor original pega o ultimo valor digitado
+        let valor = valorOriginal.replace(/\D/g, ""); // valor receber o ultimo digitado
         if (valorOriginal !== valor) {
             errorMessage.style.display = "inline"
         } else {
@@ -85,6 +110,25 @@ function formatCasa() {
         }
         e.target.value = valor;
 
+    });
+}
+function formatEmail() {
+    let emailFormat = document.getElementById("entrada-5"); // ID do campo de email
+    let errorMessageEmail = document.getElementById("error-message-email"); // ID da mensagem de erro
+    let verificarBtn =  document.getElementById("inscricao");
+    emailFormat.addEventListener('input', function (e) {
+        let valorDigitado = e.target.value;
+        valorOriginal = valorDigitado.replace(/[^a-zA-Z0-9@._-]/g, "");
+        e.target.value = valorOriginal;
+        let emailFormato = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailFormato.test(valorOriginal) && valorOriginal !== "") {
+            errorMessageEmail.style.display = "inline"; 
+            verificarBtn.disabled = true;
+        } else {
+            errorMessageEmail.style.display = "none"; 
+            verificarBtn.disabled = false;    
+        }
     });
 }
 function carregarEstados() {
@@ -128,6 +172,7 @@ function carregarEstados() {
 }
 formatadorCep();
 formatCasa();
+formatEmail();
 carregarEstados();
 //lógica e DOM do section trilhas 
 let tituloTrilhas = document.getElementById("title-trilhas");
@@ -216,8 +261,6 @@ function segurancaClick() {
     });
 
 }
-
-
 function processarInscricao() {
 
     inscricao.addEventListener('click', () => {
